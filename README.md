@@ -43,4 +43,7 @@ Initially, I focus on the month and year. The current month and year display as 
 
 If the actual month and year do not match the expected ones, then I click on the Next arrow mark to get the following month and year. Again, capture the actual values and compare to the expected ones. If they aren't equal, click on the Next arrow mark again and repeat the comparison steps. I click on Next n-number of times until I get the month and year, which match the expected values defined in the script. So, I have to be clicking the arrow mark as many times as it takes to reach my expected month and year. Only then I can stop. But I don't know exactly when that happens, that's why I don't know exactly how many times I have to click.
 
-When not knowing the end/stop condition, I use the while-loop. When I know the start and end point, then I use the for-loop. Here, I don't know how many times to click the arrow mark, i.e. don't know the condition. For that reason, I use the while-loop.
+When not knowing the end/stop condition, I use the while-loop. When I know the start and end point, then I use the for-loop. Here, I don't know how many times to click the arrow mark, i.e. don't know the condition. For that reason, I use the while-loop. Inside the loop, I capture the month and year.
+
+![image](https://user-images.githubusercontent.com/70295997/209240690-6104cce0-20e8-43ca-9c05-9c19af2436f9.png)
+
