@@ -20,6 +20,18 @@ date="23"
 
 datepicker.click()	# open datepicker
 
+# Select month and year
+while True:	
+	mo = driver.find_element(By, XPATH, "//span[@class='ui-datepicker-month']").text
+	yr = driver.find_element(By, XPATH, "//span[@class='ui-datepicker-year']").text
+
+	if mo == month and yr == year:		
+		break
+	else:
+		driver.find_element(By. XPATH, "//span[@class='ui-icon ui-icon-circle-triangle-e']").click()	# Next arrow
+
+# Select date    
+
 ...
 
 driver.close()
