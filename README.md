@@ -22,3 +22,25 @@ Identify the element, it's inside a frame. I need to switch to the frame with th
         driver.switch_to.frame(0)
 
 <img src="https://user-images.githubusercontent.com/70295997/209210572-fdd745ad-7619-4037-b855-0cc0cb121739.png" width=600>
+
+The input box accepts a date in the MM/DD/YYYY format.
+
+<img src="https://user-images.githubusercontent.com/70295997/209222859-131a02ff-6a02-4b98-a176-cc75ebfe220e.png" width=600>)
+
+        driver.find_element(By.XPATH, "//input[@id='datepicker']").send_keys("12/22/2022")		# MM/DD/YYYY
+
+This is a straightforward approach, where I need only send the keys. Sometimes it's not allowed, then I have to write the logic to select the date.
+
+Define 3 variables for the date input:
+
+        year="2023"
+        month="January"
+        date="23"
+
+        driver.find_element(By.XPATH, "//input[@id='datepicker']").click()	# open datepicker
+
+Initially, I focus on the month and year. The current month and year display as soon I open the datepicker. I need to capture those 2 elements (month and year) separately and compare them to my expected ones. If they match, immediately proceed inside the table with dates and select the desired date.
+
+If the actual month and year do not match the expected ones, then I click on the Next arrow mark to get the following month and year. Again, capture the actual values and compare to the expected ones. If they aren't equal, click on the Next arrow mark again and repeat the comparison steps. I click on Next n-number of times until I get the month and year, which match the expected values defined in the script. So, I have to be clicking the arrow mark as many times as it takes to reach my expected month and year. Only then I can stop. But I don't know exactly when that happens, that's why I don't know exactly how many times I have to click.
+
+When not knowing the end/stop condition, I use the while-loop. When I know the start and end point, then I use the for-loop. Here, I don't know how many times to click the arrow mark, i.e. don't know the condition. For that reason, I use the while-loop.
