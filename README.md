@@ -47,3 +47,18 @@ When not knowing the end/stop condition, I use the while-loop. When I know the s
 
 ![image](https://user-images.githubusercontent.com/70295997/209240690-6104cce0-20e8-43ca-9c05-9c19af2436f9.png)
 
+        # Select month and year
+        while True:	
+                mo = driver.find_element(By, XPATH, "//span[@class='ui-datepicker-month']").text
+                yr = driver.find_element(By, XPATH, "//span[@class='ui-datepicker-year']").text
+
+                if mo == month and yr == year:		
+                        break
+                else:
+                        driver.find_element(By. XPATH, "//span[@class='ui-icon ui-icon-circle-triangle-e']").click()	# Next arrow
+
+Once the correct month and year are selected, I proceed to handle the date. The date selection table changes, depending on the month and year. I need to get all the dates from the table as a list.
+
+<img src="https://user-images.githubusercontent.com/70295997/209242924-165a2cc1-c805-43d6-be3c-3761df70624c.png" width=600>)
+
+
