@@ -103,7 +103,7 @@ While a demo app allows both the selection of a date in the future or in the pas
 
 So, this is how I commonly implement the logic for the datepicker test cases. 
 
-Some datepickers are easy - can directly select the month and year from a dropdown. Let's explore this ecxample.
+Some datepickers are easy - can directly select the month and year from a dropdown. Let's explore this example with https://www.dummyticket.com/dummy-ticket-for-visa-application/.
 
 
 
