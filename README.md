@@ -61,4 +61,9 @@ Once the correct month and year are selected, I proceed to handle the date. The 
 
 <img src="https://user-images.githubusercontent.com/70295997/209242924-165a2cc1-c805-43d6-be3c-3761df70624c.png" width=600>)
 
+I don't need all the contents of the table tag. Only a specific date from 1 to 28, 29, 30 or 31. First, I capture all the dates from the datepicker, then read them one by one, until I reach the expected date. A looping statement is required. I write an Xpath to point to all the anchor tags inside the _td_'s, inside the _tr_ tags if the _tbody_.
+
+        //table[@class='ui-datepicker-calendar']/tbody/tr/td/a
+
+![image](https://user-images.githubusercontent.com/70295997/209251165-d4854b5e-2511-4ed4-8c0f-f6abcee79750.png)
 
