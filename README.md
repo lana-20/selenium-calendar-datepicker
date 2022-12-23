@@ -59,7 +59,7 @@ When not knowing the end/stop condition, I use the while-loop. When I know the s
 
 Once the correct month and year are selected, I proceed to handle the date. The date selection table changes, depending on the month and year. I need to get all the dates from the table as a list.
 
-<img src="https://user-images.githubusercontent.com/70295997/209242924-165a2cc1-c805-43d6-be3c-3761df70624c.png" width=600>)
+<img src="https://user-images.githubusercontent.com/70295997/209242924-165a2cc1-c805-43d6-be3c-3761df70624c.png" width=600>
 
 I don't need all the contents of the table tag. Only a specific date from 1 to 28, 29, 30 or 31. First, I capture all the dates from the datepicker, then read them one by one, until I reach the expected date. A looping statement is required. I write an Xpath to point to all the anchor tags inside the _td_'s, inside the _tr_ tags if the _tbody_.
 
@@ -73,14 +73,14 @@ Tomorrow, even if I change month and year, this Xpath will still point to all th
 
 Use this Xpath to capture all the date elements from the table.
 
-dates = driver.find_element(By.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td/a")
+	dates = driver.find_element(By.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td/a")
 
 From all the dates, I need to choose one date. To find that, I write a for-loop statement. As soon as the text value of a date matches my expected date condition, I click on it. Upon clicking on the desired element, I break out of the loop, because there's no need to keep interating through the remainder of the _dates_ multiple times.
 
-for dt in dates:
-	if dt.text == date:
-		dt.click()
-		break
+	for dt in dates:
+		if dt.text == date:
+			dt.click()
+			break
 
 This is the logic to select the date, when I cannot directly type (send keys) the date into the input box. It works for selecting a current or future date. 
 
@@ -101,9 +101,10 @@ Usually there are 2 scenarios when working with a datepicker, and only 1 option 
 
 While a demo app allows both the selection of a date in the future or in the past, a production app goes only in either one of those directions. But even in a demo app, I cannot select both dates concurrently, only select one option at a time.
 
-So, this is how I commonly implement the logic for the datepicker test cases. 
+Some datepickers are easy - can directly select the month and year from a dropdown. Let's explore this example with https://www.dummyticket.com/dummy-ticket-for-visa-application/. There are many elements in this app, I'm interested in the _Date of birth_.
 
-Some datepickers are easy - can directly select the month and year from a dropdown. Let's explore this example with https://www.dummyticket.com/dummy-ticket-for-visa-application/.
+<img src="https://user-images.githubusercontent.com/70295997/209258142-9ace4c84-72b2-4a02-be5b-d3a9c77bee7e.png" width=600>
+
 
 
 
