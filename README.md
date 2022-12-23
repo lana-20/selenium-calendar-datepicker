@@ -67,3 +67,8 @@ I don't need all the contents of the table tag. Only a specific date from 1 to 2
 
 ![image](https://user-images.githubusercontent.com/70295997/209251165-d4854b5e-2511-4ed4-8c0f-f6abcee79750.png)
 
+Tomorrow, even if I change month and year, this Xpath will still point to all the dates.
+
+![image](https://user-images.githubusercontent.com/70295997/209251798-4ed8d920-41eb-475e-beb6-51cb3e4fa83a.png)
+
+
