@@ -71,4 +71,41 @@ Tomorrow, even if I change month and year, this Xpath will still point to all th
 
 ![image](https://user-images.githubusercontent.com/70295997/209251798-4ed8d920-41eb-475e-beb6-51cb3e4fa83a.png)
 
+Use this Xpath to capture all the date elements from the table.
+
+dates = driver.find_element(By.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td/a")
+
+From all the dates, I need to choose one date. To find that, I write a for-loop statement. As soon as the text value of a date matches my expected date condition, I click on it. Upon clicking on the desired element, I break out of the loop, because there's no need to keep interating through the remainder of the _dates_ multiple times.
+
+for dt in dates:
+	if dt.text == date:
+		dt.click()
+		break
+
+This is the logic to select the date, when I cannot directly type (send keys) the date into the input box. It works for selecting a current or future date. 
+
+But what if I want to select a date from the past? I repeat the same logic. Except that instead of clicing on the Next arow mark, I click on the Prev arrow. I have to go in the rightward direction.
+
+Identify the Xpath locator for the Prev arrow mark and test an old date from the past. I cannot use both (future and past) dates at the same time, only one.
+
+        driver.find_element(By.XPATH, "//span[@class='ui-icon ui-icon-circle-triangle-w']").click	# Prev arrow
+
+        # past date test data
+        year="2021"
+        month="August"
+        date="12"
+
+Usually there are 2 scenarios when working with a datepicker, and only 1 option is enabled in the app:
+1) travel apps - take a current or future date for departures and returns, because there is no travel in the past
+2) DOB pickers - take a past date, because the date of birth cannot occur in the future
+
+While a demo app allows both the selection of a date in the future or in the past, a production app goes only in either one of those directions. But even in a demo app, I cannot select both dates concurrently, only select one option at a time.
+
+So, this is how I commonly implement the logic for the datepicker test cases. 
+
+Some datepickers are easy - can directly select the month and year from a dropdown. Let's explore this ecxample.
+
+
+
+
 
