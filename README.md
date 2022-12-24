@@ -109,6 +109,32 @@ There's a small textbox. When I click it, it opens the datepicker. In this parti
 
 ![image](https://user-images.githubusercontent.com/70295997/209451516-5683c7e0-362e-4571-9845-20a0cfa09146.png)
 
+After selecting month and year, I get the dates from which I select one. It's a simpler example than the previous one. In the previous scenario, I had to capture the month and year, then compare them, making it a lengthy process. The current example is simpler because I merely select the expected month and year from the respective dropdowns, then get all the dates diplayed, and select one desired date. Let's automate this app.
+
+
+As soon as I identify the input box element, I click on it, so that it opens the datepicker. As soon as I open the datepicker, without creating any variables, directly I can select the month and year from the dropdowns.
+
+I cannot directly select an option from the dropdown. I need to use the Select class. 
+
+	from selenium.webdriver.support.select import Select
+
+First, I pass the dropdown element into a Select() class object in order to be able to select a value. Then use the _.select_by_visible_text()_ method/function to select the desired month. Repeat the same steps to select the year.
+
+
+<img src="https://user-images.githubusercontent.com/70295997/209453414-baa1061a-4cba-490d-9e0f-1984215f1001.png" width=600>
+<img src="https://user-images.githubusercontent.com/70295997/209453423-43acde36-5d4d-4fdf-865b-675fc947d91a.png" width=600>
+
+
+	# Date of birth
+	driver.find_element(By.XPATH, "//input[@id='dob']").click()	# opens datepicker
+
+	datepicker_month = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepicker-month']"))
+	datepicker_month.select_by_visible_text("Dec")
+
+	datepicker_year = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepicker-year']"))
+	datepicker_year.select_by_visible_text("2022")
+
+
 
 
 
