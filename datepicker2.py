@@ -15,7 +15,7 @@ datepicker_month = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepick
 datepicker_month.select_by_visible_text("Dec")
 
 datepicker_year = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepicker-year']"))
-datepicker_year.select_by_visible_text("2022")
+datepicker_year.select_by_visible_text("1990")
 
 ...
 
