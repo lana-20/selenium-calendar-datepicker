@@ -105,6 +105,10 @@ Some datepickers are easy - can directly select the month and year from a dropdo
 
 <img src="https://user-images.githubusercontent.com/70295997/209258142-9ace4c84-72b2-4a02-be5b-d3a9c77bee7e.png" width=600>
 
+There's a small textbox. When I click it, it opens the datepicker. In this particular datepicker, there are arrow marks along with dropdowns. The dropdowns make it easy for a tester to automate, because there's no need to navigate to the next or previous months and years. I can directly select the month and year from the dropdown options.
+
+![image](https://user-images.githubusercontent.com/70295997/209451516-5683c7e0-362e-4571-9845-20a0cfa09146.png)
+
 
 
 
