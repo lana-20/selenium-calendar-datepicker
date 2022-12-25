@@ -135,7 +135,30 @@ First, I pass the dropdown element into a Select() class object in order to be a
 	datepicker_year.select_by_visible_text("1990")
 
 
+Now inspect the dates. They are contained within a _table_ tag. I use Xpath to point to all the dates (anchor tags) within the datepicker table and capture those in a variable.
 
+<img src="https://user-images.githubusercontent.com/70295997/209453973-f65ef454-d70c-4cba-8857-7e168fee7563.png" width=600>
+<img src="https://user-images.githubusercontent.com/70295997/209453974-0a0e34f3-d844-41f5-bf6b-1e3fa09c1a5f.png" width=600>
+
+	all_dates = driver.find_element(BY.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td//a")
+
+Now I need to read every date and compare it with my expected date, then click on the date. Write a for-loop, compare the expected and actual dates, and break out of it immediately once the condition is satisfied. If I don't come out of the loop block, it clicks on the date, then goes back to comparison condition, then clicks the date again, and keeps repeating this cycle.
+
+	for date in all_dates:
+		if date.text == "25":
+			date.click()
+			break
+
+The script selects Dec 25 1990 in the DD/MM/YYYY format (25/12/1990). In this demo app, I can select dates for any years between 1922-2022. This logic may not be fit for all the datepickers. Based on a specific app design, I frame my script logic accordingly.
+
+99% of the time, _send_keys()_ works. If the method doesn't work, then I write additional logic with Select() class and so on to handle datepickers.
+
+
+__Extra Practice:__
+
+https://www.dummyticket.com/dummy-ticket-for-visa-application/
+
+Choose one of the radio buttons. Provide passenger details in the interactable text boxes. Select Male or Female. Select the applicable checkboxes, radio buttons dropdown options, and fill out the billing details. Once all the details are completed, in the Order table verify the price value. No need to submit the order, it's a dummy app.
 
 
 
