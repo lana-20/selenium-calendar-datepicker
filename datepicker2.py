@@ -12,11 +12,16 @@ driver.maximize_window()
 driver.find_element(By.XPATH, "//input[@id='dob']").click()	# opens datepicker
 
 datepicker_month = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepicker-month']"))
-datepicker_month.select_by_visible_text("Dec")
+datepicker_month.select_by_visible_text("Dec")  # month
 
 datepicker_year = Select(driver.find_element(By.XPATH, "//*[@class='ui-datepicker-year']"))
-datepicker_year.select_by_visible_text("1990")
+datepicker_year.select_by_visible_text("1990")  # year
 
-...
+all_dates = driver.find_element(BY.XPATH, "//table[@class='ui-datepicker-calendar']/tbody/tr/td//a")
+
+for date in all_dates:
+  if date.text == "25":
+    date.click()
+		break
 
 driver.close()
