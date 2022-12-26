@@ -1,9 +1,10 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService	# Selenium 4 https://www.selenium.dev/selenium/docs/api/py/webdriver_chrome/selenium.webdriver.chrome.service.html
 
-
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+# driver = webdriver.Chrome(ChromeDriverManager().install())	# Selenium 3
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))	# Selenium 4
 
 driver.get("https://www.dummyticket.com/dummy-ticket-for-visa-application/")
 driver.maximize_window()
